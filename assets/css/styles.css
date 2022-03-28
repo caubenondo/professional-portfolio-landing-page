@@ -27,6 +27,15 @@ p{
     margin-bottom: 1rem;
     font-size: 1rem;
 }
+.mobile-menu{
+    display: none;
+    font-size: 2rem;
+    color: var(--brand-color-light-cyan);
+    
+}
+.mobile-nav{
+    display: none;
+}
 .page-header{
     background-color: var(--brand-color-dark-gray);
     padding: 10px 5vw 10px 0;
@@ -43,8 +52,15 @@ p{
 .brand h1{
     background-color: var(--brand-color-light-cyan);
     padding: 5px 10px 5px 5vw;
+    
 }
-
+.brand h1 a{
+    text-decoration: none;
+    color: var(--brand-color-dark-gray);
+}
+#mobile-menu {
+    display: none;
+}
 
 nav ul li {
     display: inline-block;
@@ -89,7 +105,7 @@ nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
 
 .content {
     background-color: var(--brand-color-off-white);
-    padding: 20px 0;
+    padding: 20px;
     max-width: 1440px;
     margin: 0 auto;
     align-self: center;
@@ -122,7 +138,7 @@ article {
     padding-right: 1rem;
     padding-top: 0.5rem;
     border-right: 3px solid var(--brand-color-cold-gray);
-    flex-basis: 15%;
+    flex-basis: 20%;
     
 }
 .article-header h3 {
@@ -133,7 +149,7 @@ article {
 .article-body{
     padding: 0.5rem 1rem 1rem;
     width: 80%;
-    flex-basis: 85%;
+    flex-basis: 80%;
 }
 
 .portfolio-item {   
@@ -199,6 +215,7 @@ article {
     justify-content: space-between;
     margin: auto;
     align-items: center;
+    flex-direction: row;
 }
 .contact-links li{
     display: inline-block;
@@ -206,7 +223,7 @@ article {
 .contact-links a {
     text-decoration: none;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--brand-color-dark-gray);
     border-bottom: 4px solid var(--brand-color-cold-gray);
 }
@@ -217,14 +234,29 @@ article {
 }
 
 @media screen and (max-width:992px){
-    h3{
+    header.page-header{
+        padding: 5px;
+    }
+    .nav-items ul li a{
         font-size: 1rem;
     }
-    
+    .article-header h3{
+        font-size: 2rem;
+    }
+    #work .article-body .portfolio-item:not(:first-child) {
+        flex-basis: 100%;
+    }
 }
+    
 
-@media screen and (max-width:600px){
-  
+
+@media screen and (max-width:660px){
+    body{
+        overflow-x: hidden;
+    }
+    .mobile-nav{
+        display: block;
+    }
     article{
         flex-direction: column;
         padding-left: 20px;
@@ -246,4 +278,74 @@ article {
     #work .article-body .portfolio-item:not(:first-child) {
         flex-basis: 100%;
     }
+    .contact-links{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 20px;
+        margin-left: 0;
+    }
+    .contact-links li{
+        display: block;
+        margin-bottom: 30px;
+        text-align: left;
+        padding-left: 0;
+    }
+    .contact-links a{
+        padding-left: 0;
+    }
+    .page-header .navbar .nav-items>ul {
+        display: none;
+    }
+
+    .mobile-menu li{
+        width: 100%;
+        display: block;
+    }
+    .mobile-menu{
+        display: inline;
+        font-size: 3rem;
+    }
+    .mobile-nav {
+        position:absolute;
+        overflow: none;
+        width: 100vw;
+        height: 100vh;
+        background-color:var(--brand-color-cold-gray);
+        z-index: 2;
+        left:100vw;
+        top:0;
+        transition:left 1s ease-in-out, visibility 1s ease-in-out;
+        padding: 30px;
+        visibility: collapse;
+        
+    }
+    
+    .mobile-nav label{
+        position: absolute;
+        left:90vw;
+        font-size:3rem;
+    }
+    .mobile-nav ul{
+        margin-top:50px;
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-nav a{
+        text-decoration: none;
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 30px;
+    }
+    .nav-items .mobile-nav ul li a {
+        font-size: 3rem;
+    }
+    
+    #mobile-menu:checked +*+.mobile-nav{  
+        display: block;
+        visibility: visible;
+        left:0;
+    }
+    
+   
 }
