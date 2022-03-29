@@ -248,9 +248,11 @@ article {
     }
 }
     
+@media screen and(max-width:768px) {
+    
+}
 
-
-@media screen and (max-width:660px){
+@media screen and (max-width:460px){
     body{
         overflow-x: hidden;
     }
