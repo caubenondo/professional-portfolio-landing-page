@@ -168,12 +168,14 @@ article {
 }
 .portfolio-img {
   width: 100%;
+  height: auto;
   max-height: 200px;
   overflow: hidden;
   position: relative;
 }
 .portfolio-img img {
   width: 100%;
+  height: auto;
   margin: 0 auto;
   transition: transform 0.2s ease-in-out;
 }
