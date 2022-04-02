@@ -12,6 +12,7 @@
   font-family: sans-serif;
   /* default background color */
   background-color: var(--brand-color-off-white);
+  --hero-image-url: url('../images/heroimage.jpg');
 }
 /*  basic heading Typography element setting
     h2 is used for Logo
@@ -93,7 +94,7 @@ nav ul li a:active {
 .hero-image {
   width: auto;
   min-height: 150px;
-  background-image: url("../images/Hero-image-BG.jpg");
+  background-image: var(--hero-image-url);
   background-size: cover;
   position: relative;
   padding: 20px 10vw;
